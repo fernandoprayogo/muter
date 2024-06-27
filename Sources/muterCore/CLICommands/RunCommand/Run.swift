@@ -29,9 +29,8 @@ struct Run: RunCommand {
     init() {}
 
     func run() async throws {
-        let mutationOperatorsList = !operators.isEmpty
-            ? operators
-            : .allOperators
+        let mutationOperatorsList = [MutationOperator.Id.ror, MutationOperator.Id.logicalOperator, MutationOperator.Id.swapTernary]
+        print("Mutation operator count: ", mutationOperatorsList.count)
 
         let options = Run.Options(
             filesToMutate: filesToMutate,
